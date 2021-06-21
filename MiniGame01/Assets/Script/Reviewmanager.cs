@@ -1,13 +1,13 @@
-﻿using Google.Play.Review;
+﻿//using Google.Play.Review;
 using System.Collections;
 using UnityEngine;
 
 public class Reviewmanager : MonoBehaviour
 {
     // Start is called before the first frame update
-    private ReviewManager _reviewManager;
+    //private ReviewManager _reviewManager;
 
-    private PlayReviewInfo _playReviewInfo;
+    //private PlayReviewInfo _playReviewInfo;
 
     private void Start()
     {
@@ -23,18 +23,18 @@ public class Reviewmanager : MonoBehaviour
         yield return null;
         if (Application.platform == RuntimePlatform.Android)
         {
-            _reviewManager = new ReviewManager();
+            //_reviewManager = new ReviewManager();
 
-            var playReviewInfoAsyncOperation = _reviewManager.RequestReviewFlow();
+            //var playReviewInfoAsyncOperation = _reviewManager.RequestReviewFlow();
 
-            playReviewInfoAsyncOperation.Completed += playReviewInfoAsync =>
-            {
-                if (playReviewInfoAsync.Error != ReviewErrorCode.NoError)
-                {
-                    var playReviewInfo = playReviewInfoAsync.GetResult();
-                    _reviewManager.LaunchReviewFlow(playReviewInfo);
-                }
-            };
+            // playReviewInfoAsyncOperation.Completed += playReviewInfoAsync =>
+            // {
+            //     if (playReviewInfoAsync.Error != ReviewErrorCode.NoError)
+            //     {
+            //         var playReviewInfo = playReviewInfoAsync.GetResult();
+            //         _reviewManager.LaunchReviewFlow(playReviewInfo);
+            //     }
+            // };
         }
     }
 }

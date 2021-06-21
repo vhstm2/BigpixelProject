@@ -30,13 +30,13 @@ public class GoogleProcess : MonoBehaviour
 
     public void Readerboard()
     {
-        if (GooglePlayGPGS.instance.Authenticated)
+       // if (GooglePlayGPGS.instance.Authenticated)
         {
             GooglePlayGPGS.instance.GoogleLederBoardUI();
             Debug.Log("ReaderBoardUI OPen");
             MessagePopManager.instance.ShowPop("ReaderBoardUI");
         }
-        else
+        //else
         {
             MessagePopManager.instance.ShowPop("로그인실패");
             GooglePlayGPGS.instance.GPGSLogin();

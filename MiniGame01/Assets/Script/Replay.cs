@@ -24,10 +24,10 @@ public class Replay : MonoBehaviour
         yield return new WaitForEndOfFrame();
      
 
-        Texture2D tex = new Texture2D((int)size.x,(int)size.y,
+        Texture2D tex = new Texture2D(width,height,
                                       TextureFormat.RGB565, false);
 
-        tex.ReadPixels(new Rect(0, 0, (int)size.x, (int)size.y), 0, 0, true);
+        tex.ReadPixels(new Rect(0, 0, width, height), 0, 0, true);
         tex.Apply();
         var imageByte = tex.EncodeToPNG();
 

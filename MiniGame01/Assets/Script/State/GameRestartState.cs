@@ -41,7 +41,7 @@ public class GameRestartState : GameStateBase
     {
         Debug.Log("Gamerestart End");
 
-        //GooglePlayGPGS.instance.UpdateScore2(machine.gmr.GameTimer);
+       // GooglePlayGPGS.instance.UpdateScore2(machine.gmr.GameTimer);
 
         machine.gmr.gameSceneState = GameManager.GameSceneState.GameEnd;
         GooglePlayGPGS.instance.LeaderBoardPostring(machine.gmr.timer);

@@ -1,4 +1,5 @@
 ﻿using GooglePlayGames;
+using GooglePlayGames.OurUtils;
 using GooglePlayGames.BasicApi;
 using GooglePlayGames.BasicApi.SavedGame;
 using PlayNANOO;
@@ -11,9 +12,9 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 
-public class GooglePlayGPGS : MonoBehaviour
-{
-    private static GooglePlayGPGS Instance;
+ public class GooglePlayGPGS : MonoBehaviour
+ {
+     private static GooglePlayGPGS Instance;
 
     public static GooglePlayGPGS instance
     {
@@ -31,10 +32,10 @@ public class GooglePlayGPGS : MonoBehaviour
         }
     }
 
-    //private bool isSuccess = false;
-    //private BackendReturnObject bro = new BackendReturnObject();
+//     //private bool isSuccess = false;
+//     //private BackendReturnObject bro = new BackendReturnObject();
 
-    //private string GoogleNickName = "google";
+//     //private string GoogleNickName = "google";
 
     public bool Authenticated { get { return Social.Active.localUser.authenticated; } }
 
@@ -48,7 +49,7 @@ public class GooglePlayGPGS : MonoBehaviour
         if (Authenticated)
         {
             // 유저 토큰 받기 첫번째 방법
-            string _IDtoken = PlayGamesPlatform.Instance.GetIdToken();
+           string _IDtoken = PlayGamesPlatform.Instance.GetIdToken();
             MessagePopManager.instance.ShowPop("토큰받기승인");
             // 두번째 방법
             // string _IDtoken = ((PlayGamesLocalUser)Social.localUser).GetIdToken();
@@ -342,10 +343,10 @@ public class GooglePlayGPGS : MonoBehaviour
     public void GPGSLogin()
     {
 
-        PlayGamesClientConfiguration config = new PlayGamesClientConfiguration
+         PlayGamesClientConfiguration config = new PlayGamesClientConfiguration
         .Builder()
         .EnableSavedGames()
-        //.RequestServerAuthCode(false)
+        .RequestServerAuthCode(false)
         .Build();
 
         //커스텀된 정보로 GPGS 초기화
@@ -737,7 +738,7 @@ public class GooglePlayGPGS : MonoBehaviour
         {
             playnanooSave("new"+Social.localUser.id, data);
         }
-        PlayGamesPlatform.Instance.SignOut();
+        //PlayGamesPlatform.Instance.SignOut();
     }
 
     private void OnApplicationPause(bool pause)
@@ -805,85 +806,85 @@ public class GooglePlayGPGS : MonoBehaviour
 
     private string myData_String;
     private byte[] myData_Binary;
-    private ISavedGameMetadata myGame;
+  //  private ISavedGameMetadata myGame;
 
     public void Load()
     {
         if (Application.platform == RuntimePlatform.Android)
         {
-            ((PlayGamesPlatform)Social.Active).SavedGame.OpenWithAutomaticConflictResolution("mysave", DataSource.ReadCacheOrNetwork, ConflictResolutionStrategy.UseLastKnownGood, LoadGame);
+           // ((PlayGamesPlatform)Social.Active).SavedGame.OpenWithAutomaticConflictResolution("mysave", DataSource.ReadCacheOrNetwork, ConflictResolutionStrategy.UseLastKnownGood, LoadGame);
         }
     }
 
-    private void LoadGame(SavedGameRequestStatus status, ISavedGameMetadata game)
-    {
-        if (status == SavedGameRequestStatus.Success)
-        {
-            myGame = game;
-            LoadData(myGame);
-        }
-    }
+    // private void LoadGame(SavedGameRequestStatus status, ISavedGameMetadata game)
+    // {
+    //     if (status == SavedGameRequestStatus.Success)
+    //     {
+    //         myGame = game;
+    //         LoadData(myGame);
+    //     }
+    // }
 
-    private void LoadData(ISavedGameMetadata game)
-    {
-        ((PlayGamesPlatform)Social.Active).SavedGame.ReadBinaryData(game, LoadDataCallBack);
-    }
+    // private void LoadData(ISavedGameMetadata game)
+    // {
+    //    // ((PlayGamesPlatform)Social.Active).SavedGame.ReadBinaryData(game, LoadDataCallBack);
+    // }
 
-    private void LoadDataCallBack(SavedGameRequestStatus status, byte[] LoadedData)
-    {
-        if (status == SavedGameRequestStatus.Success)
-        {
-            myData_String = Encoding.UTF8.GetString(LoadedData);
-            var myData = JsonUtility.FromJson<Eqip>(myData_String);
+    // private void LoadDataCallBack(SavedGameRequestStatus status, byte[] LoadedData)
+    // {
+    //     if (status == SavedGameRequestStatus.Success)
+    //     {
+    //         myData_String = Encoding.UTF8.GetString(LoadedData);
+    //         var myData = JsonUtility.FromJson<Eqip>(myData_String);
 
-            // UserDataManager.instance.Player_Eqip = myData;
+    //         // UserDataManager.instance.Player_Eqip = myData;
 
-            UserDataManager.instance.mapindex = myData.idx;
-            UserDataManager.instance.gameMoney = myData.Money;
-            UserDataManager.instance.StageNumber = myData.StageNumber;
-            UserDataManager.instance.opalmoney = myData.OpalCount;
-            UserDataManager.instance.Item_Slow = myData.Slow;
-            UserDataManager.instance.Item_Transparency = myData.Transparenc;
-            UserDataManager.instance.Item_Eraser = myData.Eraser;
-            UserDataManager.instance.timer = myData.timer;
+    //         UserDataManager.instance.mapindex = myData.idx;
+    //         UserDataManager.instance.gameMoney = myData.Money;
+    //         UserDataManager.instance.StageNumber = myData.StageNumber;
+    //         UserDataManager.instance.opalmoney = myData.OpalCount;
+    //         UserDataManager.instance.Item_Slow = myData.Slow;
+    //         UserDataManager.instance.Item_Transparency = myData.Transparenc;
+    //         UserDataManager.instance.Item_Eraser = myData.Eraser;
+    //         UserDataManager.instance.timer = myData.timer;
 
-            // if (UserDataManager.instance.MapChanger != null)
-            //     UserDataManager.instance.MapChanger.Change();
+    //         // if (UserDataManager.instance.MapChanger != null)
+    //         //     UserDataManager.instance.MapChanger.Change();
 
-            var GameLoad = GameObject.FindObjectOfType<GoogleProcess>();
+    //         var GameLoad = GameObject.FindObjectOfType<GoogleProcess>();
 
-            // GameLoad.LoadT(UserDataManager.instance.Player_Eqip);
-        }
-    }
+    //         // GameLoad.LoadT(UserDataManager.instance.Player_Eqip);
+    //     }
+    // }
 
     public void Save()
     {
         if (Application.platform == RuntimePlatform.Android)
         {
-            SaveData(myGame);
+            //SaveData(myGame);
         }
     }
 
-    public void SaveData(ISavedGameMetadata game)
-    {
-        var myData = UserDataManager.instance.Player_Eqip;
+    // public void SaveData(ISavedGameMetadata game)
+    // {
+    //     var myData = UserDataManager.instance.Player_Eqip;
 
-        myData_String = JsonUtility.ToJson(myData);
-        myData_Binary = Encoding.UTF8.GetBytes(myData_String);
+    //     myData_String = JsonUtility.ToJson(myData);
+    //     myData_Binary = Encoding.UTF8.GetBytes(myData_String);
 
-        SavedGameMetadataUpdate update = new SavedGameMetadataUpdate.Builder().Build();
-        ((PlayGamesPlatform)Social.Active).SavedGame.CommitUpdate(game, update, myData_Binary, SaveCallBack);
-    }
+    //     SavedGameMetadataUpdate update = new SavedGameMetadataUpdate.Builder().Build();
+    //     ((PlayGamesPlatform)Social.Active).SavedGame.CommitUpdate(game, update, myData_Binary, SaveCallBack);
+    // }
 
-    private void SaveCallBack(SavedGameRequestStatus status, ISavedGameMetadata game)
-    {
-        if (status == SavedGameRequestStatus.Success)
-        {
-        }
-        else
-        {
-        }
-    }
+    // private void SaveCallBack(SavedGameRequestStatus status, ISavedGameMetadata game)
+    // {
+    //     if (status == SavedGameRequestStatus.Success)
+    //     {
+    //     }
+    //     else
+    //     {
+    //     }
+    // }
 
     #endregion 구글저장로드 불량품
 
@@ -974,691 +975,691 @@ public class GooglePlayGPGS : MonoBehaviour
 
         #endregion Deserialize
     }
-}
-
-//    private void Start()
-//    {
-//        if (!Backend.IsInitialized)
-//        {
-//            Backend.Initialize(BackEndCallBack);
-//        }
-//        GoogleServicesInit();
-//    }
-
-//    public bool Authenticated { get { return Social.Active.localUser.authenticated; } }
-
-//    private TestSaveData TestData = new TestSaveData();
-
-//    public void GoogleServicesInit()
-//    {
-//        //debugText.text = "이닛들어옴";
-//        PlayGamesClientConfiguration config = new PlayGamesClientConfiguration
-//        .Builder()
-//        //.RequestServerAuthCode(false)
-//        //.RequestIdToken()
-//        .RequestEmail()
-//        .EnableSavedGames()
-//        .Build();
-
-//        PlayGamesPlatform.InitializeInstance(config);
-//        PlayGamesPlatform.DebugLogEnabled = false;
-//        // Google Play 게임 플랫폼 활성화
-//        PlayGamesPlatform.Activate();
-
-//        GoogleLogin();
-//    }
-
-//    public void GoogleLogin()
-//    {
-//        if (PlayGamesPlatform.Instance.localUser.authenticated)
-//        {
-//            Debug.Log("Email - " + ((PlayGamesLocalUser)Social.localUser).Email);
-//            Debug.Log("GoogleId - " + Social.localUser.id);
-//            Debug.Log("UserName - " + Social.localUser.userName);
-//            Debug.Log("UserName - " + PlayGamesPlatform.Instance.GetUserDisplayName());
-//        }
-//        else
-//        {
-//            Social.localUser.Authenticate((bool success) =>
-//            {
-//                if (success)
-//                {
-//                    Debug.Log("구글 로그인 성공");
-//                    ////초기화 되지않는 경우
-//                    //서버에 아이디가 없으면 가입
-//                    //서버에 아이디가 있으면 로그인
-//                    //ID = Email , Password = id
-
-//                    string Email = ((PlayGamesLocalUser)Social.localUser).Email;
-//                    string id = Social.localUser.id;
-//                    BackendReturnObject bro = Backend.BMember.CustomSignUp
-//                    (
-//                            Email,
-//                            id,
-//                            "SignUp"
-//                    );
-
-//                    if (bro.IsSuccess())
-//                    {
-//                        Debug.Log("회원가입 완료");
-//                        //로그인 작업
-//                        BackEndCustomLogin(Email, id);
-//                    }
-//                    else
-//                    {
-//                        Debug.Log("이미 가입된 유저");
-//                        //로그인
-//                        BackEndCustomLogin(Email, id);
-//                    }
-
-//                    Debug.Log("Email - " + ((PlayGamesLocalUser)Social.localUser).Email);
-//                    Debug.Log("GoogleId - " + Social.localUser.id);
-//                    Debug.Log("UserName - " + Social.localUser.userName);
-//                    Debug.Log("UserName - " + PlayGamesPlatform.Instance.GetUserDisplayName());
-//                }
-//                else
-//                {
-//#if UNITY_EDITOR
-//                    string Email = "Test";
-//                    string id = "1234";
-//                    BackendReturnObject bro = Backend.BMember.CustomSignUp
-//                    (
-//                            Email,
-//                            id,
-//                            "SignUp"
-//                    );
-
-//                    if (bro.IsSuccess())
-//                    {
-//                        Debug.Log("회원가입 완료");
-//                        //로그인 작업
-//                        BackEndCustomLogin(Email, id);
-//                    }
-//                    else
-//                    {
-//                        Debug.Log("이미 가입된 유저");
-//                        //로그인
-//                        BackEndCustomLogin(Email, id);
-//                    }
-//#endif
-//                }
-//            });
-//        }
-//    }
-
-//    private void BackEndCustomLogin(string Email, string id)
-//    {
-//        BackendReturnObject Loginbro = Backend.BMember.CustomLogin
-//        (
-//            Email,
-//            id
-//        );
-
-//        if (Loginbro.IsSuccess())
-//        {
-//            Debug.Log("로그인 성공");
-//            BackEndLoadInfo();
-//        }
-//        else
-//        {
-//            Debug.Log("로그인 실패");
-//        }
-//    }
-
-//    private void BackEndCallBack(BackendReturnObject bro)
-//    {
-//        if (bro.IsSuccess())
-//        {
-//            Debug.Log("뒤끝 초기화 성공");
-//        }
-//        else
-//        {
-//            Debug.Log("뒤끝 초기화 실패");
-//        }
-//    }
-
-//    private string GetTokens()
-//    {
-//        if (Authenticated)
-//        {
-//            // 유저 토큰 받기 첫번째 방법
-//            string _IDtoken = PlayGamesPlatform.Instance.GetIdToken();
-//            // 두번째 방법
-//            // string _IDtoken = ((PlayGamesLocalUser)Social.localUser).GetIdToken();
-//            return _IDtoken;
-//        }
-//        else
-//        {
-//            Debug.Log("접속되어있지 않습니다. PlayGamesPlatform.Instance.localUser.authenticated :  fail");
-//            return null;
-//        }
-//    }
-
-//    //서버 정보 저장
-//    private void BackEndSaveInfo()
-//    {
-//        Param param = new Param();
-//        JsonDataClass data = new JsonDataClass
-//            (
-//                UserDataManager.instance.Player_Eqip.idx,
-//                UserDataManager.instance.Player_Eqip.Money,
-//                UserDataManager.instance.Player_Eqip.StageNumber
-//            );
-
-//        string str = JsonUtility.ToJson(data);
-
-//        param.Add("character", str);
-
-//        BackendReturnObject broSave = Backend.GameInfo.Insert("character", param);
-
-//        if (broSave.IsSuccess())
-//        {
-//            Debug.Log(broSave.GetInDate());
-//        }
-//        else
-//        {
-//            ErrorCode(broSave);
-//        }
-//    }
-
-//    private void BackEndLoadInfo()
-//    {
-//        TableList();
-//        //true 는 저장
-//        //false 는 검색
-//        GetLoadData("character", true);
-//    }
-
-//    private void TableList()
-//    {
-//        BackendReturnObject bro = Backend.GameInfo.GetTableList();
-
-//        if (bro.IsSuccess())
-//        {
-//            //퍼블릭된 테이블 가져오기
-//            JsonData data = bro.GetReturnValuetoJSON()["privateTables"];
-//            //Backend.GameInfo.GetPublicContents("character", 1);
-//            foreach (var item in data)
-//            {
-//                Debug.Log(item.ToString());
-//            }
-//        }
-//        else
-//        {
-//            Debug.Log(bro.GetMessage());
-//        }
-//    }
-
-//    private void GetLoadData(string dbTable, bool bLogin)
-//    {
-//        BackendReturnObject bro = Backend.GameInfo.GetPrivateContents(dbTable);
-
-//        if (bro.IsSuccess())
-//        {
-//            Debug.Log(bro.GetReturnValue());
-//            GetGameInfo(bro.GetReturnValuetoJSON(), dbTable, bLogin);
-//        }
-//        else
-//        {
-//            ErrorCode(bro);
-//        }
-//    }
-
-//    private string firstKey = string.Empty;
-
-//    private void GetPublicLoadDataNext()
-//    {
-//        BackendReturnObject bro;
-
-//        if (firstKey == null)
-//        {
-//            bro = Backend.GameInfo.GetPublicContents("character", 1);
-//        }
-//        else
-//        {
-//            //이미 불러온 데이터의 다음데이터를 불러온다.1개
-//            bro = Backend.GameInfo.GetPublicContents("character", firstKey, 1);
-//        }
-
-//        if (bro.IsSuccess())
-//        {
-//            firstKey = bro.FirstKeystring();
-//            GetGameInfo(bro.GetReturnValuetoJSON(), "character", true);
-//        }
-//        else
-//        {
-//            ErrorCode(bro);
-//        }
-//    }
-
-//    private void GetGameInfo(JsonData returnData, string dbTable, bool bLogin)
-//    {
-//        if (returnData != null)
-//        {
-//            Debug.Log("데이터가 존재합니다.");
-
-//            if (returnData.Keys.Contains("rows"))
-//            {
-//                JsonData rows = returnData["rows"];
-
-//                Debug.Log("rows = " + rows.Count);
-//                GetData(rows[0], dbTable, bLogin);
-//            }
-
-//            if (returnData.Keys.Contains("row"))
-//            {
-//                JsonData row = returnData["row"];
-//                Debug.Log(row[0]);
-//                Debug.Log("rows = " + row.Count);
-//                GetData(row[0], dbTable, bLogin);
-//            }
-//        }
-//        else
-//        {
-//            Debug.Log("데이터가 없습니다");
-//        }
-//    }
-
-//    public void GetData(JsonData Data, string dbTable, bool bLogin)
-//    {
-//        if (Data.Keys.Contains(dbTable))
-//        {
-//            JsonData data = new JsonData();
-//            data = Data[dbTable][0];
-
-//            var a = JsonUtility.FromJson<JsonDataClass>(data.ToString());
-
-//            if (bLogin)
-//            {
-//                UserDataManager.instance.Player_Eqip.idx = a.UserCharacteridx;
-//                UserDataManager.instance.gameMoney = a.money;
-//                UserDataManager.instance.StageNumber = a.StageMapNumber;
-//                // 스테이지 넘버
-//            }
-//        }
-//    }
-
-//    private void ErrorCode(BackendReturnObject bro)
-//    {
-//        switch (bro.GetErrorCode())
-//        {
-//            case "404":
-//                Debug.Log("존재하지 않는 테이블");
-//                break;
-
-//            case "412":
-//                Debug.Log("비활성화된 테이블");
-//                break;
-
-//            case "413":
-//                Debug.Log("한줄의 정보가 400kb가 넘을때");
-//                break;
-
-//            default:
-//                Debug.Log("서버공통 에러 " + bro.GetMessage());
-//                break;
-//        }
-//    }
-
-//    public void OnApplicationQuit()
-//    {
-//        //if(Authenticated)
-//        BackEndSaveInfo();
-
-//        GoogleLogOut();
-//    }
-
-//    public Texture2D GetUserImage()
-//    {
-//        if (Authenticated)
-//            return Social.localUser.image;
-//        else
-//            return null;
-//    }
-
-//    public void GoogleLogOut()
-//    {
-//        PlayGamesPlatform.Instance.SignOut();
-//        Backend.BMember.Logout();
-//    }
-
-//    #region 업적 UI
-
-//    public void AchievementsUI()
-//    {
-//        if (Authenticated)
-//            Social.ShowAchievementsUI();
-//    }
-
-//    #endregion 업적 UI
-
-//    #region 업적열림
-
-//    /// <summary>
-//    /// 튜토리얼 업적 열림
-//    /// </summary>
-//    //public void Starter_AchievementPosting()
-//    //{
-//    //    Social.ReportProgress(GPGSIds., 100f, (bool success) =>
-//    //    {
-//    //        if (success)
-//    //        {
-//    //            Debug.Log(" 업적 열림");
-//    //        }
-//    //    });
-//    //}
-
-//    #endregion 업적열림
-
-//    #region 업적에 점수게시 -> 업적 진행도 표시 (0.0 ~ 100.0f)
-
-//    public void AchievementsReportProgress(string AchievementsID, int progressvalue)
-//    {
-//        PlayGamesPlatform.Instance.IncrementAchievement(AchievementsID, progressvalue, (bool success) =>
-//        {
-//        });
-//    }
-
-//    #endregion 업적에 점수게시 -> 업적 진행도 표시 (0.0 ~ 100.0f)
-
-//    #region 리더보드 UI
-
-//    public void GoogleLederBoardUI()
-//    {
-//        //debugText.text = "리더보드유아이눌림";
-
-//        if (Authenticated)
-//        {
-//            //debugText.text = "리더보드유아이호출";
-//            Social.ShowLeaderboardUI();
-//        }
-//        else
-//            GoogleLogin();
-//    }
-
-//    public void GoogleLederBoardUITarget(string LeaderBoardID)
-//    {
-//        if (Authenticated)
-//            PlayGamesPlatform.Instance.ShowLeaderboardUI(LeaderBoardID);
-//    }
-
-//    #endregion 리더보드 UI
-
-//    #region 리더보드에 점수게시
-
-//    public void LeaderBoardPostring(long score)
-//    {
-//        if (Authenticated)
-//            GoogleLederBoardPostingScore(GPGSIds.leaderboard, score);
-//    }
-
-//    public void GoogleLederBoardPostingScore(string LeaderBoardID, long PostingScore)
-//    {
-//        Social.ReportScore(PostingScore, LeaderBoardID, (bool success) =>
-//        {
-//            if (success)
-//            {
-//                //LoadDataText.text = $"리더보드 {PostingScore}게시 성공";
-//            }
-//            else
-//            {
-//                //LoadDataText.text = $"리더보드 게시 Error";
-//            }
-//        });
-//    }
-
-//    #endregion 리더보드에 점수게시
-
-//    #region 리더보드 정보 가져오기
-
-//    public void LeaderBoardScores()
-//    {
-//        List<string> userIDs = new List<string>();
-
-//        if (Social.Active.localUser.authenticated)
-//        {
-//            Social.LoadScores(GPGSIds.leaderboard, scores =>
-//            {
-//                if (scores.Length > 0)
-//                {
-//                    for (int i = 0; i < scores.Length; i++)
-//                    {
-//                        userIDs.Add(scores[i].userID);
-//                    }
-
-//                    Social.LoadUsers(userIDs.ToArray(), profiles =>
-//                    {
-//                        if (profiles.Length > 0)
-//                        {
-//                            var Length = 10;
-
-//                            for (int i = 0; i < Length; i++)
-//                            {
-//                                var username = profiles[i].userName;
-//                                var score = scores[i].value;
-
-//                                UserDataManager.instance.stateMachine.gmr.RankingText[i].text =
-//                                 i + 1 + ". " + username + " : " + score;
-//                            }
-//                        }
-//                    });
-
-//                    //for (int i = 0; i < scores.Length; i++)
-//                    //{
-//                    //    UserDataManager.instance.stateMachine.gmr.RankingText[i].text
-//                    //    = i + 1 + ". " + scores[i].leaderboardID + " Score = " + scores[i].value;
-
-//                    //    Debug.Log($"Id = {scores[i].userID} , " +
-//                    //              $"Score = {scores[i].value} , " +
-//                    //              $"Rank = {scores[i].rank}");
-//                    //}
-//                }
-//            });
-//        }
-//    }
-
-//    public void LeaderBoardRank(string mStatus)
-//    {
-//        PlayGamesPlatform.Instance.LoadScores(
-//            GPGSIds.leaderboard,
-//            LeaderboardStart.PlayerCentered,
-//            100,
-//            LeaderboardCollection.Public,
-//            LeaderboardTimeSpan.AllTime,
-//            (data) =>
-//            {
-//                mStatus = "Leaderboard data valid: " + data.Valid;
-//                mStatus += "\n approx:" + data.ApproximateCount + " have " + data.Scores.Length;
-//            });
-
-//        Debug.Log(mStatus);
-//    }
-
-//    #endregion 리더보드 정보 가져오기
-
-//    private string SaveFindName = "Game";
-
-//    public void SaveUIOpen()
-//    {
-//        if (Authenticated)
-//            ShowSelectUI();
-//    }
-
-//    private void ShowSelectUI()
-//    {
-//        uint maxNumToDisplay = 5;
-//        bool allowCreateNew = true;
-//        bool allowDelete = true;
-
-//        ISavedGameClient savedGameClient = PlayGamesPlatform.Instance.SavedGame;
-//        savedGameClient.ShowSelectSavedGameUI("Select saved game",
-//            maxNumToDisplay,
-//            allowCreateNew,
-//            allowDelete,
-//            OnSavedGameSelected);
-//    }
-
-//    public void OnSavedGameSelected(SelectUIStatus status, ISavedGameMetadata game)
-//    {
-//        if (status == SelectUIStatus.SavedGameSelected)
-//        {
-//            if (Authenticated)
-//            {
-//                OpenLoadGame(SaveFindName);
-//            }
-
-//            //SaveGame(game);
-//        }
-//        else
-//        {
-//            // handle cancel or error
-//        }
-//    }
-
-//    #region 데이터 클라우드Save(저장할 데이터 지정해야됨)
-
-//    //데이터 저장
-//    public void SaveButtonClick()
-//    {
-//        if (Authenticated)
-//            OpenSavedGame(SaveFindName);
-//    }
-
-//    public void OpenSavedGame(string filename)
-//    {
-//        ISavedGameClient savedGameClient = PlayGamesPlatform.Instance.SavedGame;
-
-//        savedGameClient.OpenWithAutomaticConflictResolution(filename,
-//                                                            DataSource.ReadCacheOrNetwork,
-//                                                            ConflictResolutionStrategy.UseLongestPlaytime,
-//                                                            OnSavedGameOpened);
-//    }
-
-//    public void OnSavedGameOpened(SavedGameRequestStatus status, ISavedGameMetadata game)
-//    {
-//        if (status == SavedGameRequestStatus.Success)
-//        {
-//            //SaveGame(game);
-//            ISavedGameClient savedGameClient = PlayGamesPlatform.Instance.SavedGame;
-//            SavedGameMetadataUpdate update = new SavedGameMetadataUpdate.Builder().Build();
-
-//            #region 클라우드에 저장할 데이터
-
-//            // savedata1 v = new savedata1();
-
-//            var data = new GameObject();
-
-//            #endregion 클라우드에 저장할 데이터
-
-//            var stringToSave = JsonUtility.ToJson(data);
-//            byte[] bytes = Encoding.UTF8.GetBytes(stringToSave);
-//            savedGameClient.CommitUpdate(game, update, bytes, OnSavedGameWritten);
-//        }
-//        else
-//        {
-//            // handle error
-//            //  LoadDataText.text = "SaveError";
-//        }
-//    }
-
-//    private void SaveGame(ISavedGameMetadata game)
-//    {
-//        ISavedGameClient savedGameClient = PlayGamesPlatform.Instance.SavedGame;
-//        SavedGameMetadataUpdate update = new SavedGameMetadataUpdate.Builder().Build();
-
-//        #region 클라우드에 저장할 데이터
-
-//        // savedata1 v = new savedata1();
-
-//        var data = new GameObject();
-
-//        #endregion 클라우드에 저장할 데이터
-
-//        var stringToSave = JsonUtility.ToJson(data);
-//        byte[] bytes = Encoding.UTF8.GetBytes(stringToSave);
-//        savedGameClient.CommitUpdate(game, update, bytes, OnSavedGameWritten);
-//    }
-
-//    public void OnSavedGameWritten(SavedGameRequestStatus status, ISavedGameMetadata game)
-//    {
-//        if (status == SavedGameRequestStatus.Success)
-//        {
-//            // handle reading or writing of saved game.
-//            //string text = "Save_성공";
-//            //LoadDataText.text = text;
-//        }
-//        else
-//        {
-//            // handle error
-//            //string text = "Save_실패";
-//            //LoadDataText.text = text;
-//        }
-//    }
-
-//    #endregion 데이터 클라우드Save(저장할 데이터 지정해야됨)
-
-//    #region 데이터 클라우드Load
-
-//    //저장된 데이터 읽기
-//    public void LoadButtonClick()
-//    {
-//        OpenLoadGame(SaveFindName);
-//    }
-
-//    public void OpenLoadGame(string filename)
-//    {
-//        ISavedGameClient savedGameClient = PlayGamesPlatform.Instance.SavedGame;
-
-//        savedGameClient.OpenWithAutomaticConflictResolution(filename,
-//                                                            DataSource.ReadCacheOrNetwork,
-//                                                            ConflictResolutionStrategy.UseLongestPlaytime,
-//                                                            OnLoadGameRead);
-//    }
-
-//    public void OnLoadGameRead(SavedGameRequestStatus status, ISavedGameMetadata game)
-//    {
-//        if (status == SavedGameRequestStatus.Success)
-//        {
-//            // handle reading or writing of saved game.
-//            LoadGameData(game);
-//        }
-//        else
-//        {
-//            // handle error
-//        }
-//    }
-
-//    private void LoadGameData(ISavedGameMetadata game)
-//    {
-//        ((PlayGamesPlatform)Social.Active).SavedGame.ReadBinaryData(game, OnSavedGameDataRead);
-//    }
-
-//    public void OnSavedGameDataRead(SavedGameRequestStatus status, byte[] data)
-//    {
-//        if (status == SavedGameRequestStatus.Success)
-//        {
-//            string dd = Encoding.UTF8.GetString(data);
-//            // LoadData = JsonUtility.FromJson<savedata1>(dd);
-
-//            //UserDataManager.Instance.userData.Money = LoadData.Money - UserDataManager.Instance.randomValue;
-//        }
-//        else
-//        {
-//            // handle error
-//            // LoadDataText.text = "LoadError";
-//        }
-//    }
-
-//    #endregion 데이터 클라우드Load
-
-//    public Texture2D getScreenshot()
-//    {
-//        // Create a 2D texture that is 1024x700 pixels from which the PNG will be
-//        // extracted
-//        Texture2D screenShot = new Texture2D(1024, 700);
-
-//        // Takes the screenshot from top left hand corner of screen and maps to top
-//        // left hand corner of screenShot texture
-//        screenShot.ReadPixels(
-//            new Rect(0, 0, Screen.width, (Screen.width / 1024) * 700), 0, 0);
-//        return screenShot;
+ }
+
+// //    private void Start()
+// //    {
+// //        if (!Backend.IsInitialized)
+// //        {
+// //            Backend.Initialize(BackEndCallBack);
+// //        }
+// //        GoogleServicesInit();
+// //    }
+
+// //    public bool Authenticated { get { return Social.Active.localUser.authenticated; } }
+
+// //    private TestSaveData TestData = new TestSaveData();
+
+// //    public void GoogleServicesInit()
+// //    {
+// //        //debugText.text = "이닛들어옴";
+// //        PlayGamesClientConfiguration config = new PlayGamesClientConfiguration
+// //        .Builder()
+// //        //.RequestServerAuthCode(false)
+// //        //.RequestIdToken()
+// //        .RequestEmail()
+// //        .EnableSavedGames()
+// //        .Build();
+
+// //        PlayGamesPlatform.InitializeInstance(config);
+// //        PlayGamesPlatform.DebugLogEnabled = false;
+// //        // Google Play 게임 플랫폼 활성화
+// //        PlayGamesPlatform.Activate();
+
+// //        GoogleLogin();
+// //    }
+
+// //    public void GoogleLogin()
+// //    {
+// //        if (PlayGamesPlatform.Instance.localUser.authenticated)
+// //        {
+// //            Debug.Log("Email - " + ((PlayGamesLocalUser)Social.localUser).Email);
+// //            Debug.Log("GoogleId - " + Social.localUser.id);
+// //            Debug.Log("UserName - " + Social.localUser.userName);
+// //            Debug.Log("UserName - " + PlayGamesPlatform.Instance.GetUserDisplayName());
+// //        }
+// //        else
+// //        {
+// //            Social.localUser.Authenticate((bool success) =>
+// //            {
+// //                if (success)
+// //                {
+// //                    Debug.Log("구글 로그인 성공");
+// //                    ////초기화 되지않는 경우
+// //                    //서버에 아이디가 없으면 가입
+// //                    //서버에 아이디가 있으면 로그인
+// //                    //ID = Email , Password = id
+
+// //                    string Email = ((PlayGamesLocalUser)Social.localUser).Email;
+// //                    string id = Social.localUser.id;
+// //                    BackendReturnObject bro = Backend.BMember.CustomSignUp
+// //                    (
+// //                            Email,
+// //                            id,
+// //                            "SignUp"
+// //                    );
+
+// //                    if (bro.IsSuccess())
+// //                    {
+// //                        Debug.Log("회원가입 완료");
+// //                        //로그인 작업
+// //                        BackEndCustomLogin(Email, id);
+// //                    }
+// //                    else
+// //                    {
+// //                        Debug.Log("이미 가입된 유저");
+// //                        //로그인
+// //                        BackEndCustomLogin(Email, id);
+// //                    }
+
+// //                    Debug.Log("Email - " + ((PlayGamesLocalUser)Social.localUser).Email);
+// //                    Debug.Log("GoogleId - " + Social.localUser.id);
+// //                    Debug.Log("UserName - " + Social.localUser.userName);
+// //                    Debug.Log("UserName - " + PlayGamesPlatform.Instance.GetUserDisplayName());
+// //                }
+// //                else
+// //                {
+// //#if UNITY_EDITOR
+// //                    string Email = "Test";
+// //                    string id = "1234";
+// //                    BackendReturnObject bro = Backend.BMember.CustomSignUp
+// //                    (
+// //                            Email,
+// //                            id,
+// //                            "SignUp"
+// //                    );
+
+// //                    if (bro.IsSuccess())
+// //                    {
+// //                        Debug.Log("회원가입 완료");
+// //                        //로그인 작업
+// //                        BackEndCustomLogin(Email, id);
+// //                    }
+// //                    else
+// //                    {
+// //                        Debug.Log("이미 가입된 유저");
+// //                        //로그인
+// //                        BackEndCustomLogin(Email, id);
+// //                    }
+// //#endif
+// //                }
+// //            });
+// //        }
+// //    }
+
+// //    private void BackEndCustomLogin(string Email, string id)
+// //    {
+// //        BackendReturnObject Loginbro = Backend.BMember.CustomLogin
+// //        (
+// //            Email,
+// //            id
+// //        );
+
+// //        if (Loginbro.IsSuccess())
+// //        {
+// //            Debug.Log("로그인 성공");
+// //            BackEndLoadInfo();
+// //        }
+// //        else
+// //        {
+// //            Debug.Log("로그인 실패");
+// //        }
+// //    }
+
+// //    private void BackEndCallBack(BackendReturnObject bro)
+// //    {
+// //        if (bro.IsSuccess())
+// //        {
+// //            Debug.Log("뒤끝 초기화 성공");
+// //        }
+// //        else
+// //        {
+// //            Debug.Log("뒤끝 초기화 실패");
+// //        }
+// //    }
+
+// //    private string GetTokens()
+// //    {
+// //        if (Authenticated)
+// //        {
+// //            // 유저 토큰 받기 첫번째 방법
+// //            string _IDtoken = PlayGamesPlatform.Instance.GetIdToken();
+// //            // 두번째 방법
+// //            // string _IDtoken = ((PlayGamesLocalUser)Social.localUser).GetIdToken();
+// //            return _IDtoken;
+// //        }
+// //        else
+// //        {
+// //            Debug.Log("접속되어있지 않습니다. PlayGamesPlatform.Instance.localUser.authenticated :  fail");
+// //            return null;
+// //        }
+// //    }
+
+// //    //서버 정보 저장
+// //    private void BackEndSaveInfo()
+// //    {
+// //        Param param = new Param();
+// //        JsonDataClass data = new JsonDataClass
+// //            (
+// //                UserDataManager.instance.Player_Eqip.idx,
+// //                UserDataManager.instance.Player_Eqip.Money,
+// //                UserDataManager.instance.Player_Eqip.StageNumber
+// //            );
+
+// //        string str = JsonUtility.ToJson(data);
+
+// //        param.Add("character", str);
+
+// //        BackendReturnObject broSave = Backend.GameInfo.Insert("character", param);
+
+// //        if (broSave.IsSuccess())
+// //        {
+// //            Debug.Log(broSave.GetInDate());
+// //        }
+// //        else
+// //        {
+// //            ErrorCode(broSave);
+// //        }
+// //    }
+
+// //    private void BackEndLoadInfo()
+// //    {
+// //        TableList();
+// //        //true 는 저장
+// //        //false 는 검색
+// //        GetLoadData("character", true);
+// //    }
+
+// //    private void TableList()
+// //    {
+// //        BackendReturnObject bro = Backend.GameInfo.GetTableList();
+
+// //        if (bro.IsSuccess())
+// //        {
+// //            //퍼블릭된 테이블 가져오기
+// //            JsonData data = bro.GetReturnValuetoJSON()["privateTables"];
+// //            //Backend.GameInfo.GetPublicContents("character", 1);
+// //            foreach (var item in data)
+// //            {
+// //                Debug.Log(item.ToString());
+// //            }
+// //        }
+// //        else
+// //        {
+// //            Debug.Log(bro.GetMessage());
+// //        }
+// //    }
+
+// //    private void GetLoadData(string dbTable, bool bLogin)
+// //    {
+// //        BackendReturnObject bro = Backend.GameInfo.GetPrivateContents(dbTable);
+
+// //        if (bro.IsSuccess())
+// //        {
+// //            Debug.Log(bro.GetReturnValue());
+// //            GetGameInfo(bro.GetReturnValuetoJSON(), dbTable, bLogin);
+// //        }
+// //        else
+// //        {
+// //            ErrorCode(bro);
+// //        }
+// //    }
+
+// //    private string firstKey = string.Empty;
+
+// //    private void GetPublicLoadDataNext()
+// //    {
+// //        BackendReturnObject bro;
+
+// //        if (firstKey == null)
+// //        {
+// //            bro = Backend.GameInfo.GetPublicContents("character", 1);
+// //        }
+// //        else
+// //        {
+// //            //이미 불러온 데이터의 다음데이터를 불러온다.1개
+// //            bro = Backend.GameInfo.GetPublicContents("character", firstKey, 1);
+// //        }
+
+// //        if (bro.IsSuccess())
+// //        {
+// //            firstKey = bro.FirstKeystring();
+// //            GetGameInfo(bro.GetReturnValuetoJSON(), "character", true);
+// //        }
+// //        else
+// //        {
+// //            ErrorCode(bro);
+// //        }
+// //    }
+
+// //    private void GetGameInfo(JsonData returnData, string dbTable, bool bLogin)
+// //    {
+// //        if (returnData != null)
+// //        {
+// //            Debug.Log("데이터가 존재합니다.");
+
+// //            if (returnData.Keys.Contains("rows"))
+// //            {
+// //                JsonData rows = returnData["rows"];
+
+// //                Debug.Log("rows = " + rows.Count);
+// //                GetData(rows[0], dbTable, bLogin);
+// //            }
+
+// //            if (returnData.Keys.Contains("row"))
+// //            {
+// //                JsonData row = returnData["row"];
+// //                Debug.Log(row[0]);
+// //                Debug.Log("rows = " + row.Count);
+// //                GetData(row[0], dbTable, bLogin);
+// //            }
+// //        }
+// //        else
+// //        {
+// //            Debug.Log("데이터가 없습니다");
+// //        }
+// //    }
+
+// //    public void GetData(JsonData Data, string dbTable, bool bLogin)
+// //    {
+// //        if (Data.Keys.Contains(dbTable))
+// //        {
+// //            JsonData data = new JsonData();
+// //            data = Data[dbTable][0];
+
+// //            var a = JsonUtility.FromJson<JsonDataClass>(data.ToString());
+
+// //            if (bLogin)
+// //            {
+// //                UserDataManager.instance.Player_Eqip.idx = a.UserCharacteridx;
+// //                UserDataManager.instance.gameMoney = a.money;
+// //                UserDataManager.instance.StageNumber = a.StageMapNumber;
+// //                // 스테이지 넘버
+// //            }
+// //        }
+// //    }
+
+// //    private void ErrorCode(BackendReturnObject bro)
+// //    {
+// //        switch (bro.GetErrorCode())
+// //        {
+// //            case "404":
+// //                Debug.Log("존재하지 않는 테이블");
+// //                break;
+
+// //            case "412":
+// //                Debug.Log("비활성화된 테이블");
+// //                break;
+
+// //            case "413":
+// //                Debug.Log("한줄의 정보가 400kb가 넘을때");
+// //                break;
+
+// //            default:
+// //                Debug.Log("서버공통 에러 " + bro.GetMessage());
+// //                break;
+// //        }
+// //    }
+
+// //    public void OnApplicationQuit()
+// //    {
+// //        //if(Authenticated)
+// //        BackEndSaveInfo();
+
+// //        GoogleLogOut();
+// //    }
+
+// //    public Texture2D GetUserImage()
+// //    {
+// //        if (Authenticated)
+// //            return Social.localUser.image;
+// //        else
+// //            return null;
+// //    }
+
+// //    public void GoogleLogOut()
+// //    {
+// //        PlayGamesPlatform.Instance.SignOut();
+// //        Backend.BMember.Logout();
+// //    }
+
+// //    #region 업적 UI
+
+// //    public void AchievementsUI()
+// //    {
+// //        if (Authenticated)
+// //            Social.ShowAchievementsUI();
+// //    }
+
+// //    #endregion 업적 UI
+
+// //    #region 업적열림
+
+// //    /// <summary>
+// //    /// 튜토리얼 업적 열림
+// //    /// </summary>
+// //    //public void Starter_AchievementPosting()
+// //    //{
+// //    //    Social.ReportProgress(GPGSIds., 100f, (bool success) =>
+// //    //    {
+// //    //        if (success)
+// //    //        {
+// //    //            Debug.Log(" 업적 열림");
+// //    //        }
+// //    //    });
+// //    //}
+
+// //    #endregion 업적열림
+
+// //    #region 업적에 점수게시 -> 업적 진행도 표시 (0.0 ~ 100.0f)
+
+// //    public void AchievementsReportProgress(string AchievementsID, int progressvalue)
+// //    {
+// //        PlayGamesPlatform.Instance.IncrementAchievement(AchievementsID, progressvalue, (bool success) =>
+// //        {
+// //        });
+// //    }
+
+// //    #endregion 업적에 점수게시 -> 업적 진행도 표시 (0.0 ~ 100.0f)
+
+// //    #region 리더보드 UI
+
+// //    public void GoogleLederBoardUI()
+// //    {
+// //        //debugText.text = "리더보드유아이눌림";
+
+// //        if (Authenticated)
+// //        {
+// //            //debugText.text = "리더보드유아이호출";
+// //            Social.ShowLeaderboardUI();
+// //        }
+// //        else
+// //            GoogleLogin();
+// //    }
+
+// //    public void GoogleLederBoardUITarget(string LeaderBoardID)
+// //    {
+// //        if (Authenticated)
+// //            PlayGamesPlatform.Instance.ShowLeaderboardUI(LeaderBoardID);
+// //    }
+
+// //    #endregion 리더보드 UI
+
+// //    #region 리더보드에 점수게시
+
+// //    public void LeaderBoardPostring(long score)
+// //    {
+// //        if (Authenticated)
+// //            GoogleLederBoardPostingScore(GPGSIds.leaderboard, score);
+// //    }
+
+// //    public void GoogleLederBoardPostingScore(string LeaderBoardID, long PostingScore)
+// //    {
+// //        Social.ReportScore(PostingScore, LeaderBoardID, (bool success) =>
+// //        {
+// //            if (success)
+// //            {
+// //                //LoadDataText.text = $"리더보드 {PostingScore}게시 성공";
+// //            }
+// //            else
+// //            {
+// //                //LoadDataText.text = $"리더보드 게시 Error";
+// //            }
+// //        });
+// //    }
+
+// //    #endregion 리더보드에 점수게시
+
+// //    #region 리더보드 정보 가져오기
+
+// //    public void LeaderBoardScores()
+// //    {
+// //        List<string> userIDs = new List<string>();
+
+// //        if (Social.Active.localUser.authenticated)
+// //        {
+// //            Social.LoadScores(GPGSIds.leaderboard, scores =>
+// //            {
+// //                if (scores.Length > 0)
+// //                {
+// //                    for (int i = 0; i < scores.Length; i++)
+// //                    {
+// //                        userIDs.Add(scores[i].userID);
+// //                    }
+
+// //                    Social.LoadUsers(userIDs.ToArray(), profiles =>
+// //                    {
+// //                        if (profiles.Length > 0)
+// //                        {
+// //                            var Length = 10;
+
+// //                            for (int i = 0; i < Length; i++)
+// //                            {
+// //                                var username = profiles[i].userName;
+// //                                var score = scores[i].value;
+
+// //                                UserDataManager.instance.stateMachine.gmr.RankingText[i].text =
+// //                                 i + 1 + ". " + username + " : " + score;
+// //                            }
+// //                        }
+// //                    });
+
+// //                    //for (int i = 0; i < scores.Length; i++)
+// //                    //{
+// //                    //    UserDataManager.instance.stateMachine.gmr.RankingText[i].text
+// //                    //    = i + 1 + ". " + scores[i].leaderboardID + " Score = " + scores[i].value;
+
+// //                    //    Debug.Log($"Id = {scores[i].userID} , " +
+// //                    //              $"Score = {scores[i].value} , " +
+// //                    //              $"Rank = {scores[i].rank}");
+// //                    //}
+// //                }
+// //            });
+// //        }
+// //    }
+
+// //    public void LeaderBoardRank(string mStatus)
+// //    {
+// //        PlayGamesPlatform.Instance.LoadScores(
+// //            GPGSIds.leaderboard,
+// //            LeaderboardStart.PlayerCentered,
+// //            100,
+// //            LeaderboardCollection.Public,
+// //            LeaderboardTimeSpan.AllTime,
+// //            (data) =>
+// //            {
+// //                mStatus = "Leaderboard data valid: " + data.Valid;
+// //                mStatus += "\n approx:" + data.ApproximateCount + " have " + data.Scores.Length;
+// //            });
+
+// //        Debug.Log(mStatus);
+// //    }
+
+// //    #endregion 리더보드 정보 가져오기
+
+// //    private string SaveFindName = "Game";
+
+// //    public void SaveUIOpen()
+// //    {
+// //        if (Authenticated)
+// //            ShowSelectUI();
+// //    }
+
+// //    private void ShowSelectUI()
+// //    {
+// //        uint maxNumToDisplay = 5;
+// //        bool allowCreateNew = true;
+// //        bool allowDelete = true;
+
+// //        ISavedGameClient savedGameClient = PlayGamesPlatform.Instance.SavedGame;
+// //        savedGameClient.ShowSelectSavedGameUI("Select saved game",
+// //            maxNumToDisplay,
+// //            allowCreateNew,
+// //            allowDelete,
+// //            OnSavedGameSelected);
+// //    }
+
+// //    public void OnSavedGameSelected(SelectUIStatus status, ISavedGameMetadata game)
+// //    {
+// //        if (status == SelectUIStatus.SavedGameSelected)
+// //        {
+// //            if (Authenticated)
+// //            {
+// //                OpenLoadGame(SaveFindName);
+// //            }
+
+// //            //SaveGame(game);
+// //        }
+// //        else
+// //        {
+// //            // handle cancel or error
+// //        }
+// //    }
+
+// //    #region 데이터 클라우드Save(저장할 데이터 지정해야됨)
+
+// //    //데이터 저장
+// //    public void SaveButtonClick()
+// //    {
+// //        if (Authenticated)
+// //            OpenSavedGame(SaveFindName);
+// //    }
+
+// //    public void OpenSavedGame(string filename)
+// //    {
+// //        ISavedGameClient savedGameClient = PlayGamesPlatform.Instance.SavedGame;
+
+// //        savedGameClient.OpenWithAutomaticConflictResolution(filename,
+// //                                                            DataSource.ReadCacheOrNetwork,
+// //                                                            ConflictResolutionStrategy.UseLongestPlaytime,
+// //                                                            OnSavedGameOpened);
+// //    }
+
+// //    public void OnSavedGameOpened(SavedGameRequestStatus status, ISavedGameMetadata game)
+// //    {
+// //        if (status == SavedGameRequestStatus.Success)
+// //        {
+// //            //SaveGame(game);
+// //            ISavedGameClient savedGameClient = PlayGamesPlatform.Instance.SavedGame;
+// //            SavedGameMetadataUpdate update = new SavedGameMetadataUpdate.Builder().Build();
+
+// //            #region 클라우드에 저장할 데이터
+
+// //            // savedata1 v = new savedata1();
+
+// //            var data = new GameObject();
+
+// //            #endregion 클라우드에 저장할 데이터
+
+// //            var stringToSave = JsonUtility.ToJson(data);
+// //            byte[] bytes = Encoding.UTF8.GetBytes(stringToSave);
+// //            savedGameClient.CommitUpdate(game, update, bytes, OnSavedGameWritten);
+// //        }
+// //        else
+// //        {
+// //            // handle error
+// //            //  LoadDataText.text = "SaveError";
+// //        }
+// //    }
+
+// //    private void SaveGame(ISavedGameMetadata game)
+// //    {
+// //        ISavedGameClient savedGameClient = PlayGamesPlatform.Instance.SavedGame;
+// //        SavedGameMetadataUpdate update = new SavedGameMetadataUpdate.Builder().Build();
+
+// //        #region 클라우드에 저장할 데이터
+
+// //        // savedata1 v = new savedata1();
+
+// //        var data = new GameObject();
+
+// //        #endregion 클라우드에 저장할 데이터
+
+// //        var stringToSave = JsonUtility.ToJson(data);
+// //        byte[] bytes = Encoding.UTF8.GetBytes(stringToSave);
+// //        savedGameClient.CommitUpdate(game, update, bytes, OnSavedGameWritten);
+// //    }
+
+// //    public void OnSavedGameWritten(SavedGameRequestStatus status, ISavedGameMetadata game)
+// //    {
+// //        if (status == SavedGameRequestStatus.Success)
+// //        {
+// //            // handle reading or writing of saved game.
+// //            //string text = "Save_성공";
+// //            //LoadDataText.text = text;
+// //        }
+// //        else
+// //        {
+// //            // handle error
+// //            //string text = "Save_실패";
+// //            //LoadDataText.text = text;
+// //        }
+// //    }
+
+// //    #endregion 데이터 클라우드Save(저장할 데이터 지정해야됨)
+
+// //    #region 데이터 클라우드Load
+
+// //    //저장된 데이터 읽기
+// //    public void LoadButtonClick()
+// //    {
+// //        OpenLoadGame(SaveFindName);
+// //    }
+
+// //    public void OpenLoadGame(string filename)
+// //    {
+// //        ISavedGameClient savedGameClient = PlayGamesPlatform.Instance.SavedGame;
+
+// //        savedGameClient.OpenWithAutomaticConflictResolution(filename,
+// //                                                            DataSource.ReadCacheOrNetwork,
+// //                                                            ConflictResolutionStrategy.UseLongestPlaytime,
+// //                                                            OnLoadGameRead);
+// //    }
+
+// //    public void OnLoadGameRead(SavedGameRequestStatus status, ISavedGameMetadata game)
+// //    {
+// //        if (status == SavedGameRequestStatus.Success)
+// //        {
+// //            // handle reading or writing of saved game.
+// //            LoadGameData(game);
+// //        }
+// //        else
+// //        {
+// //            // handle error
+// //        }
+// //    }
+
+// //    private void LoadGameData(ISavedGameMetadata game)
+// //    {
+// //        ((PlayGamesPlatform)Social.Active).SavedGame.ReadBinaryData(game, OnSavedGameDataRead);
+// //    }
+
+// //    public void OnSavedGameDataRead(SavedGameRequestStatus status, byte[] data)
+// //    {
+// //        if (status == SavedGameRequestStatus.Success)
+// //        {
+// //            string dd = Encoding.UTF8.GetString(data);
+// //            // LoadData = JsonUtility.FromJson<savedata1>(dd);
+
+// //            //UserDataManager.Instance.userData.Money = LoadData.Money - UserDataManager.Instance.randomValue;
+// //        }
+// //        else
+// //        {
+// //            // handle error
+// //            // LoadDataText.text = "LoadError";
+// //        }
+// //    }
+
+// //    #endregion 데이터 클라우드Load
+
+// //    public Texture2D getScreenshot()
+// //    {
+// //        // Create a 2D texture that is 1024x700 pixels from which the PNG will be
+// //        // extracted
+// //        Texture2D screenShot = new Texture2D(1024, 700);
+
+// //        // Takes the screenshot from top left hand corner of screen and maps to top
+// //        // left hand corner of screenShot texture
+// //        screenShot.ReadPixels(
+// //            new Rect(0, 0, Screen.width, (Screen.width / 1024) * 700), 0, 0);
+// //        return screenShot;
