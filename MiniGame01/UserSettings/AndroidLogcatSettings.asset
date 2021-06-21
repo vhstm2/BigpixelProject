@@ -1,0 +1,95 @@
+{
+    "m_SelectedDeviceId": "R3CR10LM72Y",
+    "m_SelectedPackage": {
+        "deviceId": "R3CR10LM72Y",
+        "name": "com.Mini.Game",
+        "processId": 24128,
+        "exited": false
+    },
+    "m_SelectedPriority": 0,
+    "m_KnownPackagesForSerialization": [
+        {
+            "deviceId": "R3CR10LM72Y",
+            "name": "com.sec.android.app.launcher",
+            "processId": 22892,
+            "exited": false
+        },
+        {
+            "deviceId": "R3CR10LM72Y",
+            "name": "com.Mini.Game",
+            "processId": 8318,
+            "exited": true
+        },
+        {
+            "deviceId": "R3CR10LM72Y",
+            "name": "com.android.vending",
+            "processId": 8299,
+            "exited": true
+        },
+        {
+            "deviceId": "R3CR10LM72Y",
+            "name": "com.Mini.Game",
+            "processId": 19931,
+            "exited": true
+        },
+        {
+            "deviceId": "R3CR10LM72Y",
+            "name": "com.Mini.Game",
+            "processId": 24128,
+            "exited": false
+        }
+    ],
+    "m_Tags": {
+        "m_Entries": [
+            {
+                "m_Name": "Filter by all listed tags",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "No Filter",
+                "m_Selected": true
+            },
+            {
+                "m_Name": "",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "Tag Control...",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "Unity",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "CRASH",
+                "m_Selected": false
+            }
+        ]
+    },
+    "m_MemoryViewerState": {
+        "MemoryWindowHeight": 300.0,
+        "MemoryWindowWidth": 170.0,
+        "MemoryTypeEnabled": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        "MemoryGroup": 2,
+        "Behavior": 0
+    },
+    "m_Filter": "",
+    "m_FilterIsRegularExpression": false,
+    "m_SymbolPaths": []
+}

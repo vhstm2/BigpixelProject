@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 2e3d682ebd2e44f48a3d523a1f6857b3
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 8
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - UhBee MiMi
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d72ec73eb75b1814cab11a8538575007, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

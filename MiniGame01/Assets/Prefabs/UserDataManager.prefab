@@ -1,0 +1,187 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4739828347367803591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4739828347367803589}
+  - component: {fileID: 4739828347367803588}
+  m_Layer: 0
+  m_Name: UserDataManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4739828347367803589
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4739828347367803591}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4739828347367803588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4739828347367803591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d552765079ced80498ef83ad401fe937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  stateMachine: {fileID: 0}
+  MapChanger: {fileID: 0}
+  character: 0
+  UserSprites:
+  - {fileID: 21300000, guid: 5f94d4eb855ee454883c3cba74c84cec, type: 3}
+  - {fileID: 21300000, guid: 62aa265d5391b4d4c8589400fe8d1dee, type: 3}
+  - {fileID: 21300000, guid: 8c94b1f917dc831408d11e2b4f28ac18, type: 3}
+  - {fileID: 21300000, guid: 4b455b3897f56e542a87ab07cad896dd, type: 3}
+  - {fileID: 21300000, guid: 4e8e9b438fabe79448eba8386188a77b, type: 3}
+  - {fileID: 21300000, guid: 00e2147813c163446bc107278a9cbf69, type: 3}
+  - {fileID: 21300000, guid: 405207223dfd0104093f5ae7808b06ee, type: 3}
+  - {fileID: 21300000, guid: 969be151a39d1f24792bae34075465ad, type: 3}
+  - {fileID: 21300000, guid: 0b789aa6fbdb18448925417fce5021be, type: 3}
+  - {fileID: 21300000, guid: 32fe59de11cb4a3479e94857ce5d486f, type: 3}
+  - {fileID: 21300000, guid: e8efca2d6a7ed53458f5e9f765e215f9, type: 3}
+  - {fileID: 21300000, guid: d0f21a6d67b06ff49a60c0a2e4c3e7b4, type: 3}
+  Player_Eqip:
+    select_Character:
+      E_charcter: 0
+      rare_character: 0
+      charcterindx: 0
+      name: 
+      Abillity: 
+      text: 
+      GamePlayCharacter: {fileID: 0}
+      is_purchase: 0
+    user_Characters:
+    - E_charcter: 0
+      rare_character: 0
+      charcterindx: 0
+      name: "\uBC84\uC12F"
+      Abillity: "\uC5C6\uC74C"
+      text: "\uBC84\uC12F"
+      GamePlayCharacter: {fileID: 0}
+      is_purchase: 1
+    - E_charcter: 0
+      rare_character: 0
+      charcterindx: 1
+      name: "\uADE4"
+      Abillity: "\uC5C6\uC74C"
+      text: "\uADE4"
+      GamePlayCharacter: {fileID: 0}
+      is_purchase: 1
+    - E_charcter: 0
+      rare_character: 0
+      charcterindx: 2
+      name: "\uB3C4\uB108\uCE20"
+      Abillity: "\uC5C6\uC74C"
+      text: "\uB3C4\uB108\uCE20"
+      GamePlayCharacter: {fileID: 0}
+      is_purchase: 1
+    - E_charcter: 0
+      rare_character: 0
+      charcterindx: 3
+      name: "\uCC28"
+      Abillity: "\uC5C6\uC74C"
+      text: "\uCC28"
+      GamePlayCharacter: {fileID: 0}
+      is_purchase: 1
+    - E_charcter: 0
+      rare_character: 0
+      charcterindx: 4
+      name: "\uC54C"
+      Abillity: "\uC5C6\uC74C"
+      text: "\uC54C"
+      GamePlayCharacter: {fileID: 0}
+      is_purchase: 1
+    - E_charcter: 0
+      rare_character: 0
+      charcterindx: 5
+      name: "\uC804\uAD6C"
+      Abillity: "\uC5C6\uC74C"
+      text: "\uC804\uAD6C"
+      GamePlayCharacter: {fileID: 0}
+      is_purchase: 1
+    - E_charcter: 0
+      rare_character: 0
+      charcterindx: 6
+      name: "\uCFE0\uD0A4"
+      Abillity: "\uC5C6\uC74C"
+      text: "\uCFE0\uD0A4"
+      GamePlayCharacter: {fileID: 0}
+      is_purchase: 1
+    - E_charcter: 0
+      rare_character: 0
+      charcterindx: 7
+      name: "\uBAA8\uC790"
+      Abillity: "\uC5C6\uC74C"
+      text: "\uBAA8\uC790"
+      GamePlayCharacter: {fileID: 0}
+      is_purchase: 1
+    - E_charcter: 0
+      rare_character: 0
+      charcterindx: 8
+      name: "\uAF43"
+      Abillity: "\uC5C6\uC74C"
+      text: "\uAF43"
+      GamePlayCharacter: {fileID: 0}
+      is_purchase: 1
+    - E_charcter: 1
+      rare_character: 1
+      charcterindx: 9
+      name: "\uD1B1"
+      Abillity: '-'
+      text: "\uD1B1"
+      GamePlayCharacter: {fileID: 0}
+      is_purchase: 0
+    - E_charcter: 1
+      rare_character: 2
+      charcterindx: 10
+      name: "\uAE30\uC0AC"
+      Abillity: '-'
+      text: "\uD55C\uB54C \uC804\uC124\uB85C \uBD88\uB837\uB358 \uC6A9\uC0AC. \uADF8\uAC00
+        \uC9C0\uB2CC \uC804\uC124\uC758 \uBC29\uD328\uB294 \uADF8\uB80C\uB77C\uAC04\uC758
+        \uB4DC\uB9B4\uB85C\uB3C4 \uB6AB\uC744 \uC218\uAC00 \uC5C6\uC5C8\uB2E4\uACE0
+        \uD55C\uB2E4. \uBC29\uD328\uC758 \uC218\uD638\uB85C \uC801\uACFC\uC758 \uCDA9\uB3CC\uC744
+        1\uD68C \uB9C9\uC544\uC900\uB2E4."
+      GamePlayCharacter: {fileID: 0}
+      is_purchase: 0
+    - E_charcter: 1
+      rare_character: 3
+      charcterindx: 11
+      name: "\uB3CC\uACE0\uB798"
+      Abillity: '-'
+      text: "\uB3CC\uACE0\uB798"
+      GamePlayCharacter: {fileID: 0}
+      is_purchase: 0
+    idx: 0
+    Money: 0
+    StageNumber: 0
+    OpalCount: 0
+    Slow: 0
+    Transparenc: 0
+    Eraser: 0
+    timer: 0
+    rewardIndx: 0
+    rankScore: 0
+    Achiement: 0000000000000000000000
+  main_reference: {fileID: 0}
+  shop_reference: {fileID: 0}
+  character_Ref: {fileID: 0}

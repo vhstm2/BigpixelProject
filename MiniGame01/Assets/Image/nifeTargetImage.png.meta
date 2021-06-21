@@ -1,0 +1,712 @@
+fileFormatVersion: 2
+guid: d88ffd6ef795b0c42b98b4e636738f56
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 575236969331827981
+    second: nifeTargetImage_0
+  - first:
+      213: -5498893255205595184
+    second: nifeTargetImage_1
+  - first:
+      213: -3224013995798720967
+    second: nifeTargetImage_2
+  - first:
+      213: -4797367703248327526
+    second: nifeTargetImage_3
+  - first:
+      213: 1700453415879220012
+    second: nifeTargetImage_4
+  - first:
+      213: 2329727894086540398
+    second: nifeTargetImage_5
+  - first:
+      213: 427274839261574310
+    second: nifeTargetImage_6
+  - first:
+      213: 1551481053550545384
+    second: nifeTargetImage_7
+  - first:
+      213: 184285775032922628
+    second: nifeTargetImage_8
+  - first:
+      213: 1059538431159193373
+    second: nifeTargetImage_9
+  - first:
+      213: -8685161836093834681
+    second: nifeTargetImage_10
+  - first:
+      213: -5180207442828633941
+    second: nifeTargetImage_11
+  - first:
+      213: -6834038443214088055
+    second: nifeTargetImage_12
+  - first:
+      213: 4287943403737737126
+    second: nifeTargetImage_13
+  - first:
+      213: -8466372809189752664
+    second: nifeTargetImage_14
+  - first:
+      213: 946483472223137947
+    second: nifeTargetImage_15
+  - first:
+      213: -4358468841327873159
+    second: nifeTargetImage_16
+  - first:
+      213: 4639323907884246695
+    second: nifeTargetImage_17
+  - first:
+      213: 4224977186571357997
+    second: nifeTargetImage_18
+  - first:
+      213: 6609116060356941545
+    second: nifeTargetImage_19
+  - first:
+      213: 3521518626897938368
+    second: nifeTargetImage_20
+  - first:
+      213: -5191193898437907778
+    second: nifeTargetImage_21
+  - first:
+      213: 269695222539441503
+    second: nifeTargetImage_22
+  - first:
+      213: 8578211378054589268
+    second: nifeTargetImage_23
+  - first:
+      213: -4916383161421165716
+    second: nifeTargetImage_24
+  - first:
+      213: 1804585584570404795
+    second: nifeTargetImage_25
+  - first:
+      213: -7183260914095473194
+    second: nifeTargetImage_26
+  - first:
+      213: -8997614902500320031
+    second: nifeTargetImage_27
+  - first:
+      213: 4654061424882044581
+    second: nifeTargetImage_28
+  - first:
+      213: -7556738379104562622
+    second: nifeTargetImage_29
+  - first:
+      213: -2226736844567784256
+    second: nifeTargetImage_30
+  - first:
+      213: -2721914327795319468
+    second: nifeTargetImage_31
+  - first:
+      213: 7390032248714190405
+    second: nifeTargetImage_32
+  - first:
+      213: -8196548205562794847
+    second: nifeTargetImage_33
+  - first:
+      213: 1674234864881545488
+    second: nifeTargetImage_34
+  - first:
+      213: 2753655495996578982
+    second: nifeTargetImage_35
+  - first:
+      213: 6377983960876972826
+    second: nifeTargetImage_36
+  - first:
+      213: 5365844503307380743
+    second: nifeTargetImage_37
+  - first:
+      213: -827571229150562388
+    second: nifeTargetImage_0
+  - first:
+      213: 6442726691277663727
+    second: nifeTargetImage_1
+  - first:
+      213: -5620450259718827054
+    second: nifeTargetImage_2
+  - first:
+      213: 7779761557278880147
+    second: nifeTargetImage_3
+  - first:
+      213: 2693589890365832302
+    second: nifeTargetImage_4
+  - first:
+      213: 8929143862246011000
+    second: nifeTargetImage_5
+  - first:
+      213: -6051481007166539083
+    second: nifeTargetImage_6
+  - first:
+      213: 117975396209790143
+    second: nifeTargetImage_7
+  - first:
+      213: 9150239022168572949
+    second: nifeTargetImage_8
+  - first:
+      213: 7383794642009262742
+    second: nifeTargetImage_9
+  - first:
+      213: 5061113919421983079
+    second: nifeTargetImage_10
+  - first:
+      213: 723525067821155866
+    second: nifeTargetImage_11
+  - first:
+      213: 8746584183294605685
+    second: nifeTargetImage_12
+  - first:
+      213: 8122843066444867710
+    second: nifeTargetImage_13
+  - first:
+      213: 6900057005099013273
+    second: nifeTargetImage_14
+  - first:
+      213: 5191414010830764814
+    second: nifeTargetImage_15
+  - first:
+      213: -1180460226960517196
+    second: nifeTargetImage_16
+  - first:
+      213: 6896198571914683095
+    second: nifeTargetImage_17
+  - first:
+      213: 168476269020227108
+    second: nifeTargetImage_18
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 58
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: nifeTargetImage_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 186
+        width: 187
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca7b52c0a50e384f0800000000000000
+      internalID: -827571229150562388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nifeTargetImage_1
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 186
+        width: 187
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fed688a6ac9296950800000000000000
+      internalID: 6442726691277663727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nifeTargetImage_2
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 186
+        width: 187
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d315b764462002b0800000000000000
+      internalID: -5620450259718827054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nifeTargetImage_3
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 186
+        width: 187
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 391f8dadae347fb60800000000000000
+      internalID: 7779761557278880147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nifeTargetImage_4
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 186
+        width: 187
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6cb6d9ebbd816520800000000000000
+      internalID: 2693589890365832302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nifeTargetImage_5
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 186
+        width: 187
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8707889b801baeb70800000000000000
+      internalID: 8929143862246011000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nifeTargetImage_6
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 186
+        width: 187
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bab0da0612d40ca0800000000000000
+      internalID: -6051481007166539083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nifeTargetImage_7
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 186
+        width: 187
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbc025f6ff123a100800000000000000
+      internalID: 117975396209790143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nifeTargetImage_8
+      rect:
+        serializedVersion: 2
+        x: 1496
+        y: 186
+        width: 187
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 514864e19ed2cfe70800000000000000
+      internalID: 9150239022168572949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nifeTargetImage_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 187
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69a056b1b12887660800000000000000
+      internalID: 7383794642009262742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nifeTargetImage_10
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 0
+        width: 187
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 769aee67b40bc3640800000000000000
+      internalID: 5061113919421983079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nifeTargetImage_11
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 0
+        width: 187
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a16029d373a7a0a00800000000000000
+      internalID: 723525067821155866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nifeTargetImage_12
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 0
+        width: 187
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 579335b29fb126970800000000000000
+      internalID: 8746584183294605685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nifeTargetImage_13
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 0
+        width: 187
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e78e0b57bb22ab070800000000000000
+      internalID: 8122843066444867710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nifeTargetImage_14
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 0
+        width: 187
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9945fdeb94de1cf50800000000000000
+      internalID: 6900057005099013273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nifeTargetImage_15
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 0
+        width: 187
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0bbd8d998b9b0840800000000000000
+      internalID: 5191414010830764814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nifeTargetImage_16
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 0
+        width: 187
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b79a8c8da92e9fe0800000000000000
+      internalID: -1180460226960517196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nifeTargetImage_17
+      rect:
+        serializedVersion: 2
+        x: 1496
+        y: 0
+        width: 187
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d2e783401834bf50800000000000000
+      internalID: 6896198571914683095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nifeTargetImage_18
+      rect:
+        serializedVersion: 2
+        x: 1684
+        y: 186
+        width: 184
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 426a808264c865200800000000000000
+      internalID: 168476269020227108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

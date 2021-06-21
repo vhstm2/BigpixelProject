@@ -1,0 +1,101 @@
+{
+    "m_SelectedDeviceId": "R3CR10LM72Y",
+    "m_SelectedPackage": {
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
+        "exited": false
+    },
+    "m_SelectedPriority": 1,
+    "m_KnownPackagesForSerialization": [
+        {
+            "deviceId": "ce021712b9ce38250c",
+            "name": "com.Mini.Game",
+            "processId": 20642,
+            "exited": true
+        },
+        {
+            "deviceId": "ce021712b9ce38250c",
+            "name": "com.Mini.Game",
+            "processId": 23471,
+            "exited": true
+        },
+        {
+            "deviceId": "ce021712b9ce38250c",
+            "name": "com.Mini.Game",
+            "processId": 15846,
+            "exited": true
+        },
+        {
+            "deviceId": "ce021712b9ce38250c",
+            "name": "com.Mini.Game",
+            "processId": 21510,
+            "exited": true
+        },
+        {
+            "deviceId": "ce021712b9ce38250c",
+            "name": "com.Mini.Game",
+            "processId": 11697,
+            "exited": true
+        },
+        {
+            "deviceId": "ce021712b9ce38250c",
+            "name": "com.android.vending",
+            "processId": 28375,
+            "exited": false
+        }
+    ],
+    "m_Tags": {
+        "m_Entries": [
+            {
+                "m_Name": "Filter by all listed tags",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "No Filter",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "Tag Control...",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "Unity",
+                "m_Selected": true
+            },
+            {
+                "m_Name": "CRASH",
+                "m_Selected": false
+            }
+        ]
+    },
+    "m_MemoryViewerState": {
+        "MemoryWindowHeight": 255.0,
+        "MemoryWindowWidth": 170.0,
+        "MemoryTypeEnabled": [
+            true,
+            true,
+            false,
+            false,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true
+        ],
+        "MemoryGroup": 0,
+        "Behavior": 1
+    },
+    "m_Filter": "",
+    "m_FilterIsRegularExpression": false,
+    "m_SymbolPaths": []
+}
