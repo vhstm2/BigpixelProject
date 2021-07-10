@@ -24,7 +24,7 @@ public class MessagePopManager : MonoBehaviour
     public void ShowPop(string _str, float _time = 2f)
     {
         txt.text = _str;
-        popBoard.SetActive(true);
+       // popBoard.SetActive(true);
          CancelInvoke("HidePop");
         Invoke("HidePop", _time);
     }
